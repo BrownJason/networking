@@ -1,0 +1,8 @@
+.LeftPanel {
+    float: left;
+    width: 290px;
+  }
+
+  .margin {
+    margin-top: -10px;
+  }

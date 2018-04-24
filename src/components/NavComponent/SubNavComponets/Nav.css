@@ -1,0 +1,32 @@
+.Nav {
+  text-align: left;
+  float: left;
+}
+
+.Nav a {
+  color: grey;
+}
+  
+.Nav a:link {
+  text-decoration: none;
+}
+
+.Nav a:visited {
+  text-decoration: none;
+  color: grey;
+}
+  
+.Nav a {
+  position: relative;
+  display: inline;
+}
+
+.Nav li Link {
+  position: relative;
+  display: inline;
+}
+  
+.Nav li {
+  display: inline;
+   padding: 5px;
+}

@@ -1,0 +1,173 @@
+.darkOverlay {
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  position: fixed;
+  z-index: 4000;
+}
+
+.Modal {
+    position: fixed;
+    z-index: 4001;
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    top: 80px;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+    transform: none!important;
+  }
+  
+  @media (min-width: 600px) {
+    .Modal {
+        display: flex;
+        justify-content: center;
+        width: 45vw;
+        left: calc(50% - 22.25vw);
+        border-radius: 15px;
+        transform: none!important;
+    }
+  }
+
+  .modalContent {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    width: 45vw;
+    height: 70vh;
+  }
+
+  .modalHeader {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    align-items: center;
+    background: white;
+    border-bottom: 1px solid lightgrey;
+    box-sizing: border-box;
+    display: flex;
+    flex-shrink: 0;
+    min-height: 65px;
+    height: 65px;
+    padding: 10px 15px;
+    color: #657786;
+  }
+
+  .modalTitle {
+   align-items: center;
+   display: inline-flex;
+   flex-grow: 1;
+   flex-shrink: 1;
+   flex-basis: auto;
+   color: black;
+   font-size: 18pt;
+   font-weight: bold;
+   line-height: 24px;
+   min-width: 0;
+  }
+
+  .rightToolBar {
+    align-items: center;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: flex-end;
+    line-height: 0;
+    white-space: nowrap;
+    flex-basis: 56px;
+  }
+
+  .newMessage {
+    background: #4AB3F4;
+    border-color: transparent;
+
+    border: 1px solid #1da1f2;
+    color: white;
+
+    border-radius: 100px;
+    box-shadow: none;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 16px;
+    padding: 3px 12px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .close {
+    align-items: flex-end;
+  }
+
+  .closeModal {
+    margin-left: 15px;
+  }
+
+  .modalBody{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+   flex-shrink: 1;
+   flex-basis: auto;
+   overflow: hidden;
+   position: relative;
+   border-bottom-left-radius: 15px;
+   border-bottom-right-radius: 15px;
+  }
+
+  .ScrollY {
+    max-height: 100%;
+    min-height: 100%;
+    position: absolute;
+    width: 100%;
+    transform: translateZ(0);
+
+    overflow-y: scroll!important;
+  }
+
+  .Inbox {
+    text-align: left;
+    margin: 64px;
+  }
+
+  .InboxHeader {
+    color: black;
+    font-size: 27px;
+    line-height: 32px;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  .InboxDetails {
+    color: #66757f;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 32px;
+  }
+
+  .InboxButton {
+    align-items: left;
+  }
+
+  .StartConv {
+    background: #4AB3F4;
+    border-color: transparent;
+
+    border: 1px solid #1da1f2;
+    color: white;
+
+    border-radius: 100px;
+    box-shadow: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+    padding: 6px 16px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+  }

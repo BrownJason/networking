@@ -1,0 +1,48 @@
+.avatarLink {
+    margin: -30px 0 0 8px;
+    padding: 1px;
+    vertical-align: bottom;
+    display: inline-block!important;
+    border-radius: 50%;
+}
+
+.inlineBlocks {
+    display: inline-block!important;
+    max-width: 100%;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 72px;
+    height: 72px;
+    border: 2px solid white;
+    box-sizing: border-box;
+    color: white;
+}
+
+.profileName {
+    top: 103px;
+    left: 90px;
+    width: 165px;
+  }
+
+  .profileName h5 {
+    line-height: 25px;
+    font-size: 18px;
+    margin: 3px 0 -2px 15px;
+    font-weight: bold;
+    max-width: 100%;
+    overflow: ellipsis!important;
+    white-space: nowrap!important;
+    word-wrap: normal!important;
+  }
+
+  .profileName span {
+    font-size: 12px;
+    margin: 0 0 0 15px;
+    max-width: 100%;
+    color: #66757f;
+    overflow: ellipsis!important;
+    white-space: nowrap!important;
+    word-wrap: normal!important;
+  }

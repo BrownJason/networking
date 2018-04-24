@@ -1,0 +1,32 @@
+.moment {
+    float: left;
+    display: flex;
+    padding: 5px;
+    height: 220px;
+}
+
+.moment1 {
+    float: left;
+    width: 490px;
+  }
+    
+.moment1 img {
+margin-top: 10px;
+border-radius: 10px;
+height: 100%;
+width: 100%;
+}
+    
+.moment1Text {
+float: left;
+}
+    
+.moment1Text p, h3 {
+    margin-left: 5px;
+    word-wrap: break-word;
+}
+
+.moment1Text p{
+    font-size: 10pt;
+    color: #657786;
+}

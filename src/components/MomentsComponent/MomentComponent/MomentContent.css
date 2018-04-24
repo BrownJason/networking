@@ -1,0 +1,22 @@
+.moment {
+  background: white;
+  width: 1190px;
+  display: flex;
+  
+}
+
+.moment1Wrap {
+  margin-top: 10px;
+  margin-right: 10px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.momentList {
+  margin-top: 10px;
+  width: 50%;
+  float: left;
+  display: flex;
+  flex-direction: column;
+}

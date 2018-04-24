@@ -1,0 +1,11 @@
+.webIcon {
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     padding-bottom: 10px;
+}
+
+.webIcon img {
+    width: 32px;
+    height: 32px;
+}

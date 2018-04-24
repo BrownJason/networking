@@ -1,0 +1,43 @@
+.topbar {
+    backface-visibility: hidden;
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+ .globalNav {
+    border-bottom: 1px solid #4AB3F4;
+    height: 49px;
+    position: relative;
+    width: 100%;
+  }
+  
+.pullRight {
+    float: right;
+    display: flex;
+  }
+  
+ .navExtras {
+    align-items: center;
+    display: flex;
+    height: 100%;
+  }
+  
+.globalNavInner {
+    background: #fff;
+    height: 48px;
+  }
+  
+ .navContainer {
+    padding: 0;
+    min-width: 590px;
+    width: auto;
+    height: 100%;
+    max-width: 1190px;
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+  }

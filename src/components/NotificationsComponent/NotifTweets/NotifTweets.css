@@ -1,0 +1,38 @@
+.tweetTimeLine {
+  position: relative;
+}
+
+.allOrMe {
+  margin-left: 0;
+}
+  
+  .allOrMe li {
+    display: inline-block;
+    padding: 5px;
+    margin-left: 10px;
+  }
+
+  .allOrMe ul {
+    margin: 0;
+  }
+
+  .active{
+    color: black;
+  }
+
+  .allOrMe a:link {
+    text-decoration: none;
+  }
+
+  .allOrMe a:hover{
+    color: black;
+  }
+
+  .allOrMe a {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .buttonTweet {
+    color: #4AB3F4;
+  }

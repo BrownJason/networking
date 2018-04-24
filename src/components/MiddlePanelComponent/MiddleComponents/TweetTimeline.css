@@ -1,0 +1,40 @@
+.topTimeline .tweetUser {
+    border-radius: 0;
+    position: relative;
+    padding: 10px 12px;
+  }
+  
+  .tweetUser {
+    background-color: #E8F5FD;
+    padding: 10px 12px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .boxShadow {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+  
+  .tweetUser1 {
+    background-color: white;
+    display: flex;
+    border-bottom: 1px solid lightgrey;
+  }
+
+  
+
+  .avatarUser {
+    border-radius: 50%;
+    }
+
+  .size32 {
+      width: 32px;
+      height: 32px;
+    }
+
+    .t1FormTweet {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 7px;
+    }

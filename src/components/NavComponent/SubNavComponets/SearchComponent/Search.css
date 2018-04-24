@@ -1,0 +1,80 @@
+
+  
+  .globalNav .formSearch {
+    float: right;
+    height: 33px;
+    margin: 7px 15px 0 0;
+    font-size: 12px;
+  }
+  
+  .formSearch {
+    position: relative;
+  }
+  
+  form {
+    display: block;
+  }
+  
+  .hide {
+    border: 0;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  label {
+    cursor: default;
+  }
+  
+  .globalNav .searchInput {
+    background-color: lightgrey;
+    border-radius: 21px;
+    border: 1px solid #4AB3F4;
+    box-sizing: border-box;
+    color: black;
+    display: block;
+    font-size: 12px;
+    height: 32px;
+    line-height: 16px;
+    padding: 8px 32px 8px 12px;
+    transition: all .2s ease-in-out;
+    width: 100%;
+  }
+  
+  .globalNav .searchIcon {
+    cursor: pointer;
+    display: block;
+    height: 26px;
+    position: absolute;
+    right: 3px;
+    top: 6px;
+    width: 26px;
+  }
+  
+  .globalNav .searchIcon .icon {
+    background-color: transparent;
+    height: auto;
+    width: auto;
+  }
+  
+  .icon {
+    vertical-align: baseline;
+    position: relative;
+  }
+  
+  button {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font: inherit;
+    size: 10px;
+    font-size: 18px;
+    line-height: 18px;
+  }
+  
+  .searching {
+    background-image: url(../../../../images/search.png);
+  }

@@ -1,0 +1,50 @@
+.followers {
+  margin-top: 10 0 10 0;
+}
+
+.follow {
+  margin: 25px 0 0 0;
+}
+
+.follow a {
+  display: flex;
+  text-decoration: none;
+}
+
+.followers h5 {
+  font-size: 18px;
+  font-weight: bold;
+  max-width: 100%;
+  margin: -10px 0 0 0;
+  color: black;
+  overflow: ellipsis !important;
+  white-space: nowrap !important;
+  word-wrap: normal !important;
+}
+
+.followers span {
+  font-size: 12px;
+  max-width: 100%;
+  margin: -10px 0 0 0;
+  color: #66757f;
+  overflow: ellipsis !important;
+  white-space: nowrap !important;
+  word-wrap: normal !important;
+}
+
+.follow h5 {
+  font-size: 16px;
+  margin-top: 0;
+  font-weight: bold;
+  max-width: 100%;
+  overflow: ellipsis !important;
+  white-space: nowrap !important;
+  word-wrap: normal !important;
+}
+
+.follow img {
+  width: 32px;
+  height: 32px;
+  margin-right: 5px;
+  border-radius: 50%;
+}

@@ -1,0 +1,12 @@
+.coolIcon {
+    width: 32px;
+    height: 32px;
+   
+  }
+
+  .coolIcon img {
+    width: 32px;
+    height: 32px;
+    margin-left: -75px;
+    margin-top: 8px;
+  }

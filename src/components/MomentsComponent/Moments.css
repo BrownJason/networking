@@ -1,0 +1,27 @@
+.outer1 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: white;
+  }
+
+  .outerContent1 {
+    margin: 0 auto;
+    min-height: 0;
+    height: 100%;
+    position: relative;
+    padding: 56px 14px 15px;
+    background: white;
+  }
+
+  .container1 {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
