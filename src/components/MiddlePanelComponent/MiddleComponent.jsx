@@ -68,6 +68,11 @@ this.setState({ tweetForm, formValid })
 }
 
 handleTweetSubmit = () => {
+  if(this.state.formValid) {
+    this.setState({
+      
+    })
+  }
 const tweets = Object.keys(this.state.tweetForm).reduce((res, key) =>{
   return key !== (null || undefined || '') 
   ? { ...res, [key]: this.state.tweetForm[key].value} 
