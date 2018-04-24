@@ -15,6 +15,7 @@ class TweestsComponent extends Component {
               <StreamComponent
                 key={Math.random(Math.floor(1000))}
                 text={tweet.tweet}
+                clicked={this.handleTweetDelete}
               />
             ))}
           </div>

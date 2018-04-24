@@ -7,8 +7,7 @@ import {
   bold,
   message,
   border,
-  deletes,
-  help
+  deletes
 } from './Stream.css'
 import PropTypes from 'prop-types'
 
@@ -25,7 +24,7 @@ class StreamComponent extends Component {
               <div className={header}>
                 <span className={bold}>No help for you!</span>
                 <span className={userTag}> @NoOne</span>
-                <button className={deletes} onClick={help}>x</button>
+                <button className={deletes} onClick={this.props.clicked}>x</button>
               </div>
               <div className={message}>
                 <span>{this.props.text}</span>

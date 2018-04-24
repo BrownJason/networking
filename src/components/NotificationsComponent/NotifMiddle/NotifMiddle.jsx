@@ -7,8 +7,8 @@ import TweestsComponent
 const notifMiddle = props => (
   <Fragment>
     <div className={`${middlePanel} top-tweetTimeline`}>
-      <NotifTweets tweeting={props.tweeting} change={props.change} />
-      <TweestsComponent tweet={props.tweet} />
+      <NotifTweets />
+      <TweestsComponent tweets={props.tweets} />
     </div>
   </Fragment>
 )

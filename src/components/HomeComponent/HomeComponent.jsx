@@ -69,13 +69,6 @@ class HomeComponent extends Component {
       }
     ],
 
-    tweetForm: {
-        tweet: {
-          value: '',
-          placeholder: 'What are you thinking?'
-      }
-    },
-
     tweets: []
   }
 
@@ -86,7 +79,6 @@ class HomeComponent extends Component {
           return this.setState({ tweets: response.data })
         })
       .catch((err) => console.log(err))
-
   }
 
   renderComponent () {
@@ -108,7 +100,7 @@ class HomeComponent extends Component {
       return (
         <Fragment>
           <NotifLeftPanel trend={this.state.trendingComponent} />
-          <NotifMiddle />
+          <NotifMiddle tweets={this.state.tweets}/>
         </Fragment>
       )
     }

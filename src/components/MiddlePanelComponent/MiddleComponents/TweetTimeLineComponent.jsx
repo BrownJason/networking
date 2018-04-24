@@ -7,8 +7,6 @@ import {
   t1FormTweet
 } from './TweetTimeline.css'
 
-// import StreamComponent from './StreamComponent/Stream'
-
 import FormInput from './FormInput/FormInput'
 
 class TweetTimeline extends PureComponent {
@@ -30,10 +28,12 @@ class TweetTimeline extends PureComponent {
                 value={form[input].value}
                 changed={event => this.props.changed(event, input)}
                 placeholder={form[input].placeholder}
+                valid={form[input].valid}
+                touched={form[input].touched}
               />
             ))}
           </form>
-          <button type='button' href='/' onClick={this.props.clicked.bind(this)}> Post</button>
+          <button onClick={this.props.clicked} disabled={!this.props.fomValid}>Post</button>
         </div>
       </div>
     </Fragment>
