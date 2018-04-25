@@ -69,16 +69,16 @@ class HomeComponent extends Component {
       }
     ],
 
-    tweets: []
+    tweets: {}
   }
 
   componentDidMount () {
     axios
       .get('https://reactnetwork-fdc20.firebaseio.com/tweets.json')
       .then(response => {
-          return this.setState({ tweets: response.data })
-        })
-      .catch((err) => console.log(err))
+        return this.setState({ tweets: response.data })
+      })
+      .catch(err => console.log(err))
   }
 
   renderComponent () {
@@ -86,7 +86,7 @@ class HomeComponent extends Component {
       return (
         <Fragment>
           <LeftComponent trend={this.state.trendingComponent} />
-          <MiddleComponent tweets={this.state.tweets}/>
+          <MiddleComponent tweets={this.state.tweets} />
         </Fragment>
       )
     } else if (this.props.location.pathname === '/mentions') {
@@ -100,7 +100,7 @@ class HomeComponent extends Component {
       return (
         <Fragment>
           <NotifLeftPanel trend={this.state.trendingComponent} />
-          <NotifMiddle tweets={this.state.tweets}/>
+          <NotifMiddle tweets={this.state.tweets} />
         </Fragment>
       )
     }

@@ -6,23 +6,22 @@ import PropTypes from 'prop-types'
 class TweestsComponent extends Component {
   render () {
     let tweets = this.props.tweets
-    
+
     return (
       <Fragment>
         <div className={streamTweets}>
           <div className='streaming' id='tweet'>
-            {Object.values(tweets).map(tweet => (
+            {Object.keys(tweets).map(id => (
               <StreamComponent
-                key={Math.random(Math.floor(1000))}
-                text={tweet.tweet}
-                clicked={this.handleTweetDelete}
+                key={id}
+                text={tweets[id].tweet}
+                clicked={() => this.props.clicked(id)}
               />
             ))}
           </div>
         </div>
       </Fragment>
     )
-    
   }
 }
 

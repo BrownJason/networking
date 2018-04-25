@@ -6,108 +6,132 @@ import { middlePanel } from './MiddlePanel.css'
 import axios from 'axios'
 
 class middleComponent extends Component {
-state = {
-  tweetForm: {
-    tweet: {
-      value: '',
-      placeholder: 'What are you thinking?',
-      valid: false,
-      touched: false,
-      rules: {
-        required: true,
-        minLength: 2,
-        maxLength: 255
-      }
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      showNewTweets: false,
+      tweetForm: {
+        tweet: {
+          value: '',
+          type: 'text',
+          placeholder: 'What are you thinking?',
+          valid: false,
+          touched: false,
+          rules: {
+            required: true,
+            minLength: 2,
+            maxLength: 255
+          }
+        }
+      },
+      formValid: false
     }
-  },
-  formValid: false,
-
-  tweets: []
-}
-
-checkValidity(value, rules) {
-  let isValid = true
-
-  if(!rules) {
-    return true
   }
 
-  if(rules.required) {
-    isValid = value.trim() !== '' && isValid
+  checkValidity (value, rules) {
+    let isValid = true
+
+    if (!rules) {
+      return true
+    }
+
+    if (rules.required) {
+      isValid = value.trim() !== '' && isValid
+    }
+
+    if (rules.minLength) {
+      isValid = value.length >= rules.minLength && isValid
+    }
+
+    if (rules.maxLength) {
+      isValid = value.length <= rules.maxLength && isValid
+    }
+
+    return isValid
   }
 
-  if(rules.minLength) {
-    isValid = value.length >= rules.minLength && isValid
-  }
+  handleTweetChange = (event, input) => {
+    const tweetForm = { ...this.state.tweetForm }
+    const updatedTweet = { ...tweetForm[input] }
 
-  if(rules.maxLength) {
-    isValid = value.length <= rules.maxLength && isValid
-  }
-
-  return isValid
-}
-
-handleTweetChange = (event, input) => {
-const tweetForm = {...this.state.tweetForm}
-const updatedTweet = {...tweetForm[input]}
-updatedTweet.value = event.target.value
-updatedTweet.valid = this.checkValidity(
-  updatedTweet.value,
-  updatedTweet.rules
-)
-
-updatedTweet.touched = true
-tweetForm[input] = updatedTweet
-
-let formValid = true
-Object.keys(tweetForm).forEach(input =>{
-  formValid = tweetForm[input].valid && formValid
-})
-
-this.setState({ tweetForm, formValid })
-}
-
-handleTweetSubmit = () => {
-  if(this.state.formValid) {
-    this.setState({
-      
-    })
-  }
-const tweets = Object.keys(this.state.tweetForm).reduce((res, key) =>{
-  return key !== (null || undefined || '') 
-  ? { ...res, [key]: this.state.tweetForm[key].value} 
-  : {...res}
-}, {})
-
-axios
-  .post('https://reactnetwork-fdc20.firebaseio.com/tweets.json', tweets)
-}
-
-handleTweetDelete = (event) =>{
-  axios.delete('https://reactnetwork-fdc20.firebaseio.com/tweets/' + this.setState({tweets: this.state.tweets}))
-}
-
-  render() {
-
-    let form = (
-      <TweetTimeline 
-      form={this.state.tweetForm}
-      changed={this.handleTweetChange}
-      clicked={this.handleTweetSubmit}
-      formValid={this.state.formValid}
-      />
+    updatedTweet.value = event.target.value
+    updatedTweet.valid = this.checkValidity(
+      updatedTweet.value,
+      updatedTweet.rules
     )
 
-    return(
+    updatedTweet.touched = true
+    tweetForm[input] = updatedTweet
+
+    let formValid = true
+    Object.keys(tweetForm).forEach(input => {
+      formValid = tweetForm[input].valid && formValid
+    })
+
+    this.setState({ tweetForm, formValid })
+  }
+
+  handleTweetSubmit = () => {
+    if (this.state.formValid) {
+      console.log(this.state.showNewTweets)
+      this.setState({ showNewTweets: true })
+      console.log(this.state.showNewTweets)
+
+      const tweet = Object.keys(this.state.tweetForm).reduce((res, key) => {
+        return { ...res, [key]: this.state.tweetForm[key].value }
+      }, {})
+
+      axios.post('https://reactnetwork-fdc20.firebaseio.com/tweets.json', tweet)
+
+      this.setState({
+        tweetForm: {
+          tweet: {
+            value: '',
+            type: 'text',
+            placeholder: 'What are you thinking?',
+            valid: false,
+            touched: false,
+            rules: {
+              required: true,
+              minLength: 2,
+              maxLength: 255
+            }
+          }
+        },
+        showNewTweets: false
+      })
+    }
+  }
+
+  handleTweetDelete = id => {
+    axios
+      .delete(
+        'https://reactnetwork-fdc20.firebaseio.com/tweets/' + id + '.json'
+      )
+      .catch(err => console.log(err))
+  }
+
+  render () {
+    return (
       <Fragment>
         <div className={`${middlePanel} top-tweetTimeline`}>
-          <TweetTimeline {...form.props}/>
-          <TweestsComponent tweets={this.props.tweets} clicked={this.handleTweetDelete}/>
+          <TweetTimeline
+            form={this.state.tweetForm}
+            changed={this.handleTweetChange}
+            clicked={this.handleTweetSubmit}
+            formValid={this.state.formValid}
+          />
+          {this.props.tweets
+            ? <TweestsComponent
+              tweets={this.props.tweets}
+              clicked={this.handleTweetDelete}
+              />
+            : null}
         </div>
       </Fragment>
     )
   }
 }
-
 
 export default middleComponent
