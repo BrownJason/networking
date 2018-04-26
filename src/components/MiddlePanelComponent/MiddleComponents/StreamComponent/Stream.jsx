@@ -24,7 +24,11 @@ class StreamComponent extends Component {
               <div className={header}>
                 <span className={bold}>No help for you!</span>
                 <span className={userTag}> @NoOne</span>
-                <button className={deletes} onClick={this.props.click}>
+                <button
+                  className={deletes}
+                  onClick={this.props.clicks}
+                  onKeyPress={this.props.entered}
+                >
                   <i className='fa fa-trash' />
                 </button>
               </div>

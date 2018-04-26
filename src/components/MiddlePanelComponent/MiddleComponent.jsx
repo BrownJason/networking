@@ -12,6 +12,7 @@ class middleComponent extends Component {
             form={this.props.form}
             changed={this.props.changed}
             clicked={this.props.clicked}
+            entered={this.props.entered}
             formValid={this.props.formValid}
           />
           <TweestsComponent

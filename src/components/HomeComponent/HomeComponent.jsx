@@ -84,6 +84,12 @@ class HomeComponent extends Component {
     this.props.getTweets()
   }
 
+  handleKeyPress = event => {
+    if (event.key === 'Enter') {
+      this.props.submitClicked()
+    }
+  }
+
   renderComponent () {
     if (this.props.location.pathname === '/') {
       return (
@@ -94,6 +100,7 @@ class HomeComponent extends Component {
             changed={this.props.tweetChanged}
             clicked={this.props.submitClicked}
             formValid={this.props.tweetFormValid}
+            entered={this.handleKeyPress}
             tweets={this.props.tweets}
             clicks={this.props.deleteTweets}
           />
