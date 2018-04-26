@@ -20,7 +20,6 @@ import {
   tweetChanged,
   getTweetsAsync,
   deleteTweetsAsync,
-  submitTweetsAsync,
   submitTweet
 } from '../../store/actions/'
 
@@ -78,6 +77,10 @@ class HomeComponent extends Component {
   }
 
   componentDidMount () {
+    this.props.getTweets()
+  }
+
+  componentDidUpdate () {
     this.props.getTweets()
   }
 

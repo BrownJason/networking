@@ -49,29 +49,24 @@ const tweetFormReducer = (state = initialState, action) => {
           ? { ...res, [key]: state.tweetForm[key].value }
           : { ...res }
       }, {})
-      // return dispatch => {
-      axios
-        .post('https://reactnetwork-fdc20.firebaseio.com/tweets.json', tweet)
-        .then(res => {
-          return {
-            tweetForm: {
-              tweet: {
-                value: '',
-                type: 'text',
-                placeholder: 'What are you thinking?',
-                valid: false,
-                touched: false,
-                rules: {
-                  required: true,
-                  minLength: 2,
-                  maxLength: 255
-                }
-              }
+      axios.post('https://reactnetwork-fdc20.firebaseio.com/tweets.json', tweet)
+      return {
+        ...state,
+        tweetForm: {
+          tweet: {
+            value: '',
+            type: 'text',
+            placeholder: 'What are you thinking?',
+            valid: false,
+            touched: false,
+            rules: {
+              required: true,
+              minLength: 2,
+              maxLength: 255
             }
           }
-        })
-      // }
-      return state
+        }
+      }
     default:
       return state
   }
