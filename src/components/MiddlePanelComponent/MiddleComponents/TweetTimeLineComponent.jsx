@@ -27,7 +27,8 @@ class TweetTimeline extends PureComponent {
                 <FormInput
                   key={input}
                   value={form[input].value}
-                  changed={event => this.props.changed(event, input)}
+                  changed={event =>
+                    this.props.changed(event.target.value, input)}
                   type={form[input].type}
                   placeholder={form[input].placeholder}
                   valid={form[input].valid}

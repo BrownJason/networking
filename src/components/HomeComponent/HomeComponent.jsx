@@ -15,7 +15,14 @@ import Marvel from '../../images/Marvel.png'
 import BlankSpace from '../../images/blank-space.jpg'
 import Cats from '../../images/cats.jpg'
 
-import axios from 'axios'
+import { connect } from 'react-redux'
+import {
+  tweetChanged,
+  getTweetsAsync,
+  deleteTweetsAsync,
+  submitTweetsAsync,
+  submitTweet
+} from '../../store/actions/'
 
 class HomeComponent extends Component {
   state = {
@@ -67,18 +74,11 @@ class HomeComponent extends Component {
         h4Text: '#DarkSouls',
         pText: '· Death welcomes you'
       }
-    ],
-
-    tweets: {}
+    ]
   }
 
   componentDidMount () {
-    axios
-      .get('https://reactnetwork-fdc20.firebaseio.com/tweets.json')
-      .then(response => {
-        return this.setState({ tweets: response.data })
-      })
-      .catch(err => console.log(err))
+    this.props.getTweets()
   }
 
   renderComponent () {
@@ -86,7 +86,14 @@ class HomeComponent extends Component {
       return (
         <Fragment>
           <LeftComponent trend={this.state.trendingComponent} />
-          <MiddleComponent tweets={this.state.tweets} />
+          <MiddleComponent
+            form={this.props.tweetForm}
+            changed={this.props.tweetChanged}
+            clicked={this.props.submitClicked}
+            formValid={this.props.tweetFormValid}
+            tweets={this.props.tweets}
+            clicks={this.props.deleteTweets}
+          />
         </Fragment>
       )
     } else if (this.props.location.pathname === '/mentions') {
@@ -100,7 +107,14 @@ class HomeComponent extends Component {
       return (
         <Fragment>
           <NotifLeftPanel trend={this.state.trendingComponent} />
-          <NotifMiddle tweets={this.state.tweets} />
+          <NotifMiddle
+            form={this.props.tweetForm}
+            changed={this.props.tweetChanged}
+            clicked={this.props.submitClicked}
+            formValid={this.props.tweetFormValid}
+            tweets={this.props.tweets}
+            clicks={this.props.deleteTweets}
+          />
         </Fragment>
       )
     }
@@ -122,4 +136,22 @@ class HomeComponent extends Component {
   }
 }
 
-export default HomeComponent
+const mapStateToProps = state => {
+  return {
+    tweetForm: state.tweetsFormReducer.tweetForm,
+    tweetFormValid: state.tweetsFormReducer.tweetFormValid,
+    tweets: state.tweetReducer.tweets
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    tweetChanged: (value, inputName) =>
+      dispatch(tweetChanged(value, inputName)),
+    submitClicked: () => dispatch(submitTweet()),
+    getTweets: () => dispatch(getTweetsAsync()),
+    deleteTweets: id => dispatch(deleteTweetsAsync(id))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeComponent)

@@ -15,7 +15,7 @@ class TweestsComponent extends Component {
               <StreamComponent
                 key={id}
                 text={tweets[id].tweet}
-                clicked={() => this.props.clicked(id)}
+                click={() => this.props.clicks(id)}
               />
             ))}
           </div>
