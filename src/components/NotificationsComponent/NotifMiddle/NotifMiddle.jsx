@@ -10,12 +10,10 @@ class NotifMiddle extends Component {
       <Fragment>
         <div className={`${middlePanel} top-tweetTimeline`}>
           <NotifTweets />
-          {this.props.tweets
-            ? <TweestsComponent
-              tweets={this.props.tweets}
-              clicked={this.handleTweetDelete}
-              />
-            : null}
+          <TweestsComponent
+            tweets={this.props.tweets}
+            clicks={this.props.clicks}
+          />
         </div>
       </Fragment>
     )
